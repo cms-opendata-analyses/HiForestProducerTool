@@ -1,0 +1,10 @@
+root://eospublic.cern.ch//eos/opendata/cms/hidata/HIRun2010/HIAllPhysics/RECO/ZS-v2/0033/0A820C29-5142-E011-A739-0030487C90C2.root
+root://eospublic.cern.ch//eos/opendata/cms/hidata/HIRun2010/HIAllPhysics/RECO/ZS-v2/0033/0A998E53-6443-E011-9918-003048F1E1E4.root
+root://eospublic.cern.ch//eos/opendata/cms/hidata/HIRun2010/HIAllPhysics/RECO/ZS-v2/0033/0AFBC139-1143-E011-A3AF-003048F1C7F6.root
+root://eospublic.cern.ch//eos/opendata/cms/hidata/HIRun2010/HIAllPhysics/RECO/ZS-v2/0033/0C0F4602-9642-E011-9958-003048CF9B4C.root
+root://eospublic.cern.ch//eos/opendata/cms/hidata/HIRun2010/HIAllPhysics/RECO/ZS-v2/0033/0C29EB73-1F42-E011-B64D-001D09F2A690.root
+root://eospublic.cern.ch//eos/opendata/cms/hidata/HIRun2010/HIAllPhysics/RECO/ZS-v2/0033/0CF180CA-3342-E011-995C-0030487CAE7C.root
+root://eospublic.cern.ch//eos/opendata/cms/hidata/HIRun2010/HIAllPhysics/RECO/ZS-v2/0033/0E379853-AF42-E011-9FCE-001617E30D00.root
+root://eospublic.cern.ch//eos/opendata/cms/hidata/HIRun2010/HIAllPhysics/RECO/ZS-v2/0033/0E6026CF-B743-E011-8980-001617E30CC2.root
+root://eospublic.cern.ch//eos/opendata/cms/hidata/HIRun2010/HIAllPhysics/RECO/ZS-v2/0033/0E8FC21E-6643-E011-B6AA-0030487CAF5E.root
+root://eospublic.cern.ch//eos/opendata/cms/hidata/HIRun2010/HIAllPhysics/RECO/ZS-v2/0033/100D2A07-B042-E011-B9B2-0019B9F7312C.root

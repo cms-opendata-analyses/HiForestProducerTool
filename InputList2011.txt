@@ -1,1 +1,0 @@
-root://eospublic.cern.ch//eos/opendata/cms/hidata/HIRun2011/HIDiMuon/HIDiMuon/RECO/04Mar2013-v1/10000/FEFB351E-C387-E211-814F-003048F3428E.root

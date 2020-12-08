@@ -1,22 +1,24 @@
 #include <TMath.h>
+#include <TFile.h>
+#include <TTree.h>
+#include <TCanvas.h>
+#include <TH1F.h>
 #include <TLorentzVector.h>
 #include <iostream>
-#include <algorithm>
+/*#include <algorithm>
 #include <vector>
 
 using std::stringstream;
 using std::vector;
 using std::abs;
-
-void forest2dimuon(
-		TString fname = "HiForestAOD_DATAtest.root",
-		TString trig = "HLT_HIL1DoubleMuOpen", //check the name of the trigger in the output root file and put what you want to use
-		TString Collection = "demo", 
-		float minPt = 0,
-		int nevt=-1
-		) {  
+*/
+void forest2dimuon(){  
 
 	using namespace std;
+	TString fname = "HiForestAOD_DATAtest2011.root";
+	TString trig = "HLT_HIL1DoubleMuOpen_v2"; //check the name of the trigger in the output root file and put what you want to use
+	TString Collection = "demo"; 
+	Int_t nevt=-1;
 	TFile *f1 = new TFile(fname.Data());
 	Float_t mumass=0.105658;
 	TTree *HltTree = (TTree*)f1->Get("hltanalysis/HltTree");
@@ -71,10 +73,9 @@ void forest2dimuon(
 	//////////////////  dijet tree 
 	////////////////////////////////////////////////////////////////////////
 	TLorentzVector v1, v2, dimu; //4-vectors for muons and dimuon
-	Int_t numevt = 0;
 	if(nevt == -1) nevt = HltTree->GetEntries(); 
 	cout << "Events to Analyze: "<<nevt<<endl;
-	for (int iev=0; iev<nevt; iev++) {
+	for (Int_t iev=0; iev<nevt; iev++) {
 		if(iev%100000==0)
 		{ 
 			cout << ">>>>> EVENT " << iev << endl; 
@@ -84,22 +85,21 @@ void forest2dimuon(
 		continue;					//check if the trigger is fired
 		}
 		MuTree->GetEntry(iev);
-		dimu=0;
 		if (nMu<2)continue;				//We need at least 2 muons in an event
-	for (int i=1;i<nMu;i++){
-		if (MuHitsV[i]<12) continue;			//Muon Selections
-		if (MuHitsP[i]<2) continue;			//
-		if (MuTrackChi[i]>4.0) continue;		//
-		if (MuDistPVz[i]>0.05) continue;		//
-		if (MuPt[i]<1.4) continue;			//
-		if (abs(MuEta[i])>2.4) continue;		//
-		for (int j=0;j<i;j++){				//loop over 2nd muond
-			if (MuHitsV[j]<12) continue;		//Muon Selections
-			if (MuHitsP[j]<2) continue;		//
-			if (MuTrackChi[j]>4.0) continue;	//
-			if (MuDistPVz[j]>0.05) continue;	//
-			if (MuPt[j]<1.4) continue;		//
-			if (abs(MuEta[j])>2.4) continue;	//
+	for (Int_t i=1;i<nMu;i++){
+//		if (MuHitsV[i]<12) continue;			//Muon Selections
+//		if (MuHitsP[i]<2) continue;			//
+//		if (MuTrackChi[i]>4.0) continue;		//
+//		if (MuDistPVz[i]>0.05) continue;		//
+//		if (MuPt[i]<1.4) continue;			//
+//		if (abs(MuEta[i])>2.4) continue;		//
+		for (Int_t j=0;j<i;j++){				//loop over 2nd muond
+//			if (MuHitsV[j]<12) continue;		//Muon Selections
+//			if (MuHitsP[j]<2) continue;		//
+//			if (MuTrackChi[j]>4.0) continue;	//
+//			if (MuDistPVz[j]>0.05) continue;	//
+//			if (MuPt[j]<1.4) continue;		//
+//			if (abs(MuEta[j])>2.4) continue;	//
 			if (MuC[i]>0&&MuC[j]>0) continue;	//Only opposite charge muons
 			if (MuC[i]<0&&MuC[j]<0) continue;	//
 		v1.SetPtEtaPhiM( MuPt[i], MuEta[i], MuPhi[i], mumass );
@@ -110,6 +110,5 @@ void forest2dimuon(
 	}
 	} //end of event loop
 	dimu_h->Draw("P");
-	c1->Print("diMuon_Minv.png");
 } 
 

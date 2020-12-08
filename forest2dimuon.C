@@ -87,19 +87,19 @@ void forest2dimuon(){
 		MuTree->GetEntry(iev);
 		if (nMu<2)continue;				//We need at least 2 muons in an event
 	for (Int_t i=1;i<nMu;i++){
-//		if (MuHitsV[i]<12) continue;			//Muon Selections
-//		if (MuHitsP[i]<2) continue;			//
-//		if (MuTrackChi[i]>4.0) continue;		//
-//		if (MuDistPVz[i]>0.05) continue;		//
-//		if (MuPt[i]<1.4) continue;			//
-//		if (abs(MuEta[i])>2.4) continue;		//
+		if (MuHitsV[i]<12) continue;			//Muon Selections
+		if (MuHitsP[i]<2) continue;			//
+		if (MuTrackChi[i]>4.0) continue;		//
+		if (MuDistPVz[i]>0.05) continue;		//
+		if (MuPt[i]<1.4) continue;			//
+		if (abs(MuEta[i])>2.4) continue;		//
 		for (Int_t j=0;j<i;j++){				//loop over 2nd muond
-//			if (MuHitsV[j]<12) continue;		//Muon Selections
-//			if (MuHitsP[j]<2) continue;		//
-//			if (MuTrackChi[j]>4.0) continue;	//
-//			if (MuDistPVz[j]>0.05) continue;	//
-//			if (MuPt[j]<1.4) continue;		//
-//			if (abs(MuEta[j])>2.4) continue;	//
+			if (MuHitsV[j]<12) continue;		//Muon Selections
+			if (MuHitsP[j]<2) continue;		//
+			if (MuTrackChi[j]>4.0) continue;	//
+			if (MuDistPVz[j]>0.05) continue;	//
+			if (MuPt[j]<1.4) continue;		//
+			if (abs(MuEta[j])>2.4) continue;	//
 			if (MuC[i]>0&&MuC[j]>0) continue;	//Only opposite charge muons
 			if (MuC[i]<0&&MuC[j]<0) continue;	//
 		v1.SetPtEtaPhiM( MuPt[i], MuEta[i], MuPhi[i], mumass );

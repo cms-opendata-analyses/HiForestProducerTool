@@ -146,6 +146,7 @@ void TriggerInfoAnalyzer::beginRun(edm::Run const& iRun, edm::EventSetup const& 
 	  hltConfig_.dump("Triggers");
 	}
       }
+	hltConfig_.dump("Datasets");//use to check the Dataset name to analyze the triggers
     }
   } else {
     cout << "HLTEventAnalyzerAOD::analyze:"
@@ -186,6 +187,7 @@ void TriggerInfoAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetu
      cout << "HLTEventAnalyzerAOD::analyze: Error in getting TriggerEvent product from Event!" << endl;
      return;
    }
+	//cout <<hltConfig_.size()<<endl;
    // sanity check
    assert(triggerResultsHandle_->size()==hltConfig_.size());
    
@@ -197,6 +199,7 @@ void TriggerInfoAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetu
 	Int_t accept;
 	TString trigName;
    const vector<string> triggerNamesInDS = hltConfig_.datasetContent(datasetName_);
+cout << "trigger Names size: "<<triggerNamesInDS.size()<<endl;
    for (unsigned i = 0; i < triggerNamesInDS.size(); i++) {
 	accept=0;
        trigName = triggerNamesInDS[i];

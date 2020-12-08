@@ -247,7 +247,7 @@ int TriggerInfoAnalyzer::analyzeTrigger(const edm::Event& iEvent, const edm::Eve
     return 0;
   }
   
-  const std::pair<int,int> prescales(hltConfig_.prescaleValues(iEvent,iSetup,triggerName));
+//  const std::pair<int,int> prescales(hltConfig_.prescaleValues(iEvent,iSetup,triggerName));
 //  cout << "HLTEventAnalyzerAOD::analyzeTrigger: path "
 //      << triggerName << " [" << triggerIndex << "] "
 //      << "prescales L1T,HLT: " << prescales.first << "," << prescales.second

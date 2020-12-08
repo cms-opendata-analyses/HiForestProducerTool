@@ -7,7 +7,7 @@ process = cms.Process('HiForest')
 process.options = cms.untracked.PSet(SkipEvent = cms.untracked.vstring('ProductNotFound'))
 
 #Number of events: put '-1' unless testing
-process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(100) )
+process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(-1) )
 
 #HiForest script init
 process.load("HiForest_cff")

@@ -18,9 +18,9 @@ process.HiForest.HiForestVersion = cms.string(version)
 goodJSON = 'Cert_181530-183126_HI7TeV_PromptReco_Collisions11_JSON_MuonPhys.txt'
 myLumis = LumiList.LumiList(filename = goodJSON).getCMSSWString().split(',')
 import FWCore.Utilities.FileUtils as FileUtils
-files2010data = FileUtils.loadListFromFile ('InputList2011.txt')
+files2011data = FileUtils.loadListFromFile ('InputList2011.txt')
 process.source = cms.Source("PoolSource",
-    fileNames = cms.untracked.vstring(*files2010data    
+    fileNames = cms.untracked.vstring(*files2011data    
     )
 )
 process.source.lumisToProcess = CfgTypes.untracked(CfgTypes.VLuminosityBlockRange())

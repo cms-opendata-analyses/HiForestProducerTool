@@ -1,1 +1,9 @@
-root://eospublic.cern.ch//eos/opendata/cms/hidata/HIRun2011/HIDiMuon/HIDiMuon/RECO/04Mar2013-v1/10000/FEFB351E-C387-E211-814F-003048F3428E.root
+root://eospublic.cern.ch//eos/opendata/cms/hidata/HIRun2011/HIDiMuon/RECO/04Mar2013-v1/10000/001C9519-BA87-E211-9483-842B2B6F81CC.root
+root://eospublic.cern.ch//eos/opendata/cms/hidata/HIRun2011/HIDiMuon/RECO/04Mar2013-v1/10000/0056490A-0A86-E211-8E72-003048F316A6.root
+root://eospublic.cern.ch//eos/opendata/cms/hidata/HIRun2011/HIDiMuon/RECO/04Mar2013-v1/10000/00718239-7B87-E211-853A-842B2B689031.root
+root://eospublic.cern.ch//eos/opendata/cms/hidata/HIRun2011/HIDiMuon/RECO/04Mar2013-v1/10000/009F7729-EB86-E211-BCA2-842B2B6F5F37.root
+root://eospublic.cern.ch//eos/opendata/cms/hidata/HIRun2011/HIDiMuon/RECO/04Mar2013-v1/10000/00BF0BCF-BE86-E211-9735-003048F2B122.root
+root://eospublic.cern.ch//eos/opendata/cms/hidata/HIRun2011/HIDiMuon/RECO/04Mar2013-v1/10000/00DEE3DF-9787-E211-B8DF-003048F316CA.root
+root://eospublic.cern.ch//eos/opendata/cms/hidata/HIRun2011/HIDiMuon/RECO/04Mar2013-v1/10000/00F85E0A-D387-E211-B297-003048F3112E.root
+root://eospublic.cern.ch//eos/opendata/cms/hidata/HIRun2011/HIDiMuon/RECO/04Mar2013-v1/10000/00FC293B-0B87-E211-8ADD-003048F63A08.root
+root://eospublic.cern.ch//eos/opendata/cms/hidata/HIRun2011/HIDiMuon/RECO/04Mar2013-v1/10000/020742E2-E887-E211-9221-842B2B6AEB1C.root

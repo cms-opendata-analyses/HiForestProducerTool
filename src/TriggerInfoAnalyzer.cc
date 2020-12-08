@@ -146,6 +146,7 @@ void TriggerInfoAnalyzer::beginRun(edm::Run const& iRun, edm::EventSetup const& 
 	  hltConfig_.dump("Triggers");
 	}
       }
+	hltConfig_.dump("Datasets");//use to check the Dataset name to analyze the triggers
     }
   } else {
     cout << "HLTEventAnalyzerAOD::analyze:"

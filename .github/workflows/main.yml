@@ -15,7 +15,7 @@ jobs:
           mkdir outputs
           pwd
           ls -l
-          chmod +x commands.sh
+          #chmod +x commands.sh
       # run the container with the script in the repository
       - name: Producer
         id: container

@@ -16,7 +16,7 @@ void forest2dimuon(){
 
 	using namespace std;
 	TString fname = "HiForestAOD_DATAtest2011.root";
-	TString trig = "HLT_HIL1DoubleMuOpen_v2"; //check the name of the trigger in the output root file and put what you want to use
+	TString trig = "HLT_HIL1DoubleMuOpen_v1"; //check the name of the trigger in the output root file and put what you want to use
 	TString Collection = "demo"; 
 	Int_t nevt=-1;
 	TFile *f1 = new TFile(fname.Data());

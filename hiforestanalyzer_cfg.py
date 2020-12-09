@@ -18,7 +18,7 @@ process.HiForest.HiForestVersion = cms.string(version)
 goodJSON = 'Cert_181530-183126_HI7TeV_PromptReco_Collisions11_JSON_MuonPhys.txt'
 myLumis = LumiList.LumiList(filename = goodJSON).getCMSSWString().split(',')
 import FWCore.Utilities.FileUtils as FileUtils
-files2011data = FileUtils.loadListFromFile ('InputList2011.txt')
+files2011data = FileUtils.loadListFromFile ('CMS_HIRun2010_HIAllPhysics_ZS-v2_RECO_file_index.txt')
 process.source = cms.Source("PoolSource",
     fileNames = cms.untracked.vstring(*files2011data    
     )

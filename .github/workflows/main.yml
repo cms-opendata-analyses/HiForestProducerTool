@@ -15,7 +15,7 @@ jobs:
           mkdir outputs
           pwd
           ls -l
-      # run the the production script in the repository
+      # run the container with the script in the repository
       - name: Producer
         id: produce
         run: | 

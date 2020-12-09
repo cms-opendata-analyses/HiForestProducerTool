@@ -1,0 +1,35 @@
+name: Test HI 2010 workflow on plain docker
+on:
+  pull_request:
+    branches:
+    - 2010
+jobs:
+  test_workflow:
+    runs-on: ubuntu-latest
+    name: HiForest test 2010 - plain docker
+    steps:
+      - uses: actions/checkout@v2
+      - name: Prepare
+        run: |
+          mkdir outputs
+          pwd
+          ls -l
+      # run the container with the script in the repository
+      - name: Producer
+        id: produce
+        run: | 
+          docker run -v $(pwd):/mnt/vol -w /home/cmsusr gitlab-registry.cern.ch/cms-cloud/cmssw-docker/cmssw_3_9_2_patch5-slc5_amd64_gcc434:2020-11-17-e0b0b7a6 /bin/bash /mnt/vol/commands.sh 10000
+          echo ls -l  `ls -l `
+          cp *.root outputs
+      # run the plotting script
+      - name: Plotter
+        id: plot
+        run: |
+          docker run -v $(pwd):/mnt/vol -w /home/cmsusr gitlab-registry.cern.ch/cms-cloud/cmssw-docker/cmssw_3_9_2_patch5-slc5_amd64_gcc434:2020-11-17-e0b0b7a6 /bin/bash /mnt/vol/plot.sh
+          cp *.png outputs
+      # upload output file
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: output
+          path: outputs/

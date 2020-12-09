@@ -15,10 +15,10 @@ process.HiForest.inputLines = cms.vstring("HiForest V3",)
 version = 'no git info'
 process.HiForest.HiForestVersion = cms.string(version)
 
-goodJSON = '/home/cms-opendata/CMSSW_3_9_2_patch5/src/TriggerInfo/TriggerInfoAnalyzer/Cert_150436-152957_HI7TeV_StreamExpress_Collisions10_JSON_MuonPhys_v2.txt'
+goodJSON = 'Cert_150436-152957_HI7TeV_StreamExpress_Collisions10_JSON_MuonPhys_v2.txt'
 myLumis = LumiList.LumiList(filename = goodJSON).getCMSSWString().split(',')
 import FWCore.Utilities.FileUtils as FileUtils
-files2010data = FileUtils.loadListFromFile ('/home/cms-opendata/Opendata/CMSSW_3_9_2_patch5/src/HiForest/HiForestAnalyzer/InputList.txt')
+files2010data = FileUtils.loadListFromFile ('InputList.txt')
 process.source = cms.Source("PoolSource",
     fileNames = cms.untracked.vstring(*files2010data    
     )

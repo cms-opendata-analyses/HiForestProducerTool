@@ -1,4 +1,5 @@
 #!/bin/sh -l
+set -e 
 sudo chown $USER /mnt/vol
 
 mkdir HiForest

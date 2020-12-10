@@ -9,7 +9,7 @@ cp -av /mnt/vol HiForestProducer
 cd HiForestProducer
 
 cp /mnt/vol/*.root .
-root -l -b forest2dimuon.C
+root -l -b forest2dimuon.C++
 
 cp *.png /mnt/vol/
 echo  ls -l /mnt/vol

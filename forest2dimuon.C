@@ -111,6 +111,6 @@ void forest2dimuon(){
 	} //end of event loop
 	dimu_h->Draw("P");
 	c1->Print("diMuon_Minv.png");
-	exit();
+	exit(0);
 } 
 

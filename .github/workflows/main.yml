@@ -6,7 +6,7 @@ on:
 jobs:
   test_workflow:
     runs-on: ubuntu-latest
-    name: HiForest test - plain docker
+    name: HiForest 2011 test - plain docker
     steps:
       # chmod of the script before getting to the container
       - uses: actions/checkout@v2

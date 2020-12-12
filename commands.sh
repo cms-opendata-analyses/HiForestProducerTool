@@ -18,9 +18,6 @@ sed -i "s/$eventline/process.maxEvents = cms.untracked.PSet( input = cms.untrack
 sed -i "s/process.GlobalTag.connect/#process.GlobalTag.connect/g" $config
 cmsRun $config
 
-#root -l -b forest2dimuon.C
-
 cp *.root /mnt/vol/
-#cp *.png /mnt/vol/
 echo  ls -l /mnt/vol
 ls -l /mnt/vol

@@ -3,9 +3,9 @@ sudo chown $USER /mnt/vol
 
 mkdir HiForest
 cd HiForest
-# For the plain github action with docker, the area would be available in /mnt/vol
+# For the plain github action with docker, the repository is available in /mnt/vol
 # git clone -b 2011 git://github.com/cms-legacy-analyses/HiForestProducerTool.git HiForestProducer
-cp -av /mnt/vol HiForestProducer
+cp -av /mnt/vol/forest2dimuon.C HiForestProducer
 cd HiForestProducer
 
 cp /mnt/vol/*.root .

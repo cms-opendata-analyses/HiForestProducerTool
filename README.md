@@ -59,7 +59,7 @@ Then follow these steps:
 
 The job is configured to read the input root files from the full list of files CMS_HIRun2010_HIAllPhysics_ZS-v2_RECO_file_index.txt
 
-This will produce the HiForestAOD_DATAtest.root file as an output.
+It will produce the HiForestAOD_DATAtest.root file as an output.
 
 NOTE: The first time you execute the job, it will take a long time (depending on your connection speed) to the point that it looks like it is not doing anything. That is fine. This is because the database payload files will be downloaded/cached locally in the VM or container. Later attempts should be faster.
 

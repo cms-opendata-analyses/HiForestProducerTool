@@ -8,7 +8,7 @@ This repository hosts a set of simple examples that use CMSSW EDAnalyzers to ext
 ### Prepare and compile
 
 First, you have to either
-- create a [VM](http://opendata.cern.ch/docs/cms-virtual-machine-2010 "CMS 2010 Virtual Machines: How to install") from the CMS Open Data website and create the CMSSW environment, and intialize it with 
+- create a [VM](http://opendata.cern.ch/docs/cms-virtual-machine-2010 "CMS 2010 Virtual Machines: How to install") from the CMS Open Data website. Open the `CMS shell` terminal in the VM and create and intialize the CMSSW environment with 
 
   ```
   cmsrel CMSSW_3_9_2_patch2

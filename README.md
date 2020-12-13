@@ -8,13 +8,15 @@ This repository hosts a set of simple examples that use CMSSW EDAnalyzers to ext
 ### Prepare and compile
 
 First, you have to either
-- create a [VM](http://opendata.cern.ch/docs/cms-virtual-machine-2010 "CMS 2010 Virtual Machines: How to install") from the CMS Open Data website and create the CMSSW environment, change to it and intialize it with 
+- create a [VM](http://opendata.cern.ch/docs/cms-virtual-machine-2010 "CMS 2010 Virtual Machines: How to install") from the CMS Open Data website and create the CMSSW environment, and intialize it with 
+
   ```
   cmsrel CMSSW_3_9_2_patch2
   cd CMSSW_3_9_2_patch2/src/
   cmsenv
   ```
 - or set up a [Docker container](http://opendata.cern.ch/docs/cms-guide-docker) with
+
   ```
   docker run --name opendata -it  gitlab-registry.cern.ch/cms-cloud/cmssw-docker/cmssw_3_9_2_patch5-slc5_amd64_gcc434:2020-11-17-e0b0b7a6 /bin/bash
   ```
@@ -33,6 +35,7 @@ Then follow these steps:
   ```
   scram b
   ```
+  
 ### Run the producer
 
 - In the VM, make symbolic links to the conditions database

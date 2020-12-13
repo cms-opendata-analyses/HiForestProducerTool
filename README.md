@@ -15,7 +15,7 @@ First, you have to either
   cd CMSSW_3_9_2_patch2/src/
   cmsenv
   ```
-- or set up a [Docker container](http://opendata.cern.ch/docs/cms-guide-docker) with
+- or, set up a [Docker container](http://opendata.cern.ch/docs/cms-guide-docker) with
 
   ```
   docker run --name opendata -it  gitlab-registry.cern.ch/cms-cloud/cmssw-docker/cmssw_3_9_2_patch5-slc5_amd64_gcc434:2020-11-17-e0b0b7a6 /bin/bash
@@ -38,16 +38,16 @@ Then follow these steps:
   
 ### Run the producer
 
-- In the VM, make symbolic links to the conditions database
+- If you are using the VM, make symbolic links to the conditions database
 
   ```
   ln -sf /cvmfs/cms-opendata-conddb.cern.ch/GR_R_39X_V6B GR_R_39X_V6B
   ln -sf /cvmfs/cms-opendata-conddb.cern.ch/GR_R_39X_V6B.db GR_R_39X_V6B.db
   ```
 
-You should now see the `cms-opendata-conddb.cern.ch` link in the `/cvmfs` area.
+  You should now see the `cms-opendata-conddb.cern.ch` link in the `/cvmfs` area.
 
-- In the docker container, comment the line starting with  `process.GlobalTag.connect` in the configuration file `hiforestanalyzer_cfg.py`
+- If you are using the docker container, comment the line starting with  `process.GlobalTag.connect` in the configuration file `hiforestanalyzer_cfg.py`
 
 - Set the number of events in the configuration file. The default -1 runs over all events.
 

@@ -49,7 +49,7 @@ Then follow these steps:
 
 - If you are using the docker container, comment the line starting with  `process.GlobalTag.connect` in the configuration file `hiforestanalyzer_cfg.py`
 
-- Set the number of events in the configuration file. The default -1 runs over all events.
+- Set the number of events in the configuration file. The default `-1` runs over all events.
 
 - Run the CMSSW executable in the background and dump the output in a log file with any name (full.log in this case)
 
@@ -60,6 +60,8 @@ Then follow these steps:
 The job is configured to read the input root files from the full list of files CMS_HIRun2010_HIAllPhysics_ZS-v2_RECO_file_index.txt
 
 This will produce the HiForestAOD_DATAtest.root file as an output.
+
+NOTE: The first time you execute the job, it will take a long time (depending on your connection speed) to the point that it looks like it is not doing anything. That is fine. This is because the database payload files will be downloaded/cached locally in the VM or container. Later attempts should be faster.
 
 You can modify [src/Analyzer.cc](src/Analyzer.cc) file to include other object (tracks, electrons, etc) in the hiforest output. the instructions a given inside it.
 
@@ -73,9 +75,11 @@ Run this analysis script with
 root -l forest2dimuon.C
 ```
 
+You can select another trigger, and you can see the name of the triggers in the producer output. Note that trigger versions may have changed during the data taking (e.g. `_v1` or `_v2` in the end of the trigger path name).
+
 ## Continuous Integration
 
-This repository contains also [a github workflow](.github/workflows/main.yml), which runs a test job on the CMS open data container using github free resources. It uses a docker container and runs a HiForest root file producer workflow defined in [commands.sh](commands.sh) and makes an example plot with [plot.sh](plot.sh). The ouput is returned as a github artifcat. The workflow is triggered by a pull request. 
+This repository contains [a github workflow](.github/workflows/main.yml), which runs a test job on the CMS open data container using github free resources. It uses a docker container and runs a HiForest root file producer workflow defined in [commands.sh](commands.sh) and makes an example plot with [plot.sh](plot.sh). The ouput is returned as a github artifact. The workflow is triggered by a pull request. 
 
 
 

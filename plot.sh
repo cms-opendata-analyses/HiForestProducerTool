@@ -7,7 +7,7 @@ cd HiForest
 # git clone -b 2011 git://github.com/cms-legacy-analyses/HiForestProducerTool.git HiForestProducer
 mkdir HiForestProducer
 cd HiForestProducer
-cp -av /mnt/vol/forest2dimuon.C .
+cp /mnt/vol/forest2dimuon.C .
 
 cp /mnt/vol/*.root .
 root -l -b forest2dimuon.C++

@@ -15,12 +15,12 @@ process.HiForest.inputLines = cms.vstring("HiForest V3",)
 version = 'no git info'
 process.HiForest.HiForestVersion = cms.string(version)
 
-goodJSON = '/home/cms-opendata/CMSSW_3_9_2_patch5/src/TriggerInfo/TriggerInfoAnalyzer/Cert_150436-152957_HI7TeV_StreamExpress_Collisions10_JSON_MuonPhys_v2.txt'
+goodJSON = 'Cert_181530-183126_HI7TeV_PromptReco_Collisions11_JSON_MuonPhys.txt'
 myLumis = LumiList.LumiList(filename = goodJSON).getCMSSWString().split(',')
 import FWCore.Utilities.FileUtils as FileUtils
-files2010data = FileUtils.loadListFromFile ('/home/cms-opendata/Opendata/CMSSW_3_9_2_patch5/src/HiForest/HiForestAnalyzer/InputList.txt')
+files2011data = FileUtils.loadListFromFile ('CMS_HIRun2011_HIDiMuon_RECO_04Mar2013-v1_root_file_index.txt')
 process.source = cms.Source("PoolSource",
-    fileNames = cms.untracked.vstring(*files2010data    
+    fileNames = cms.untracked.vstring(*files2011data    
     )
 )
 process.source.lumisToProcess = CfgTypes.untracked(CfgTypes.VLuminosityBlockRange())
@@ -28,21 +28,21 @@ process.source.lumisToProcess.extend(myLumis)
 
 #Global Tag: change the name according to the instructions
 process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
-process.GlobalTag.connect = cms.string('sqlite_file:/cvmfs/cms-opendata-conddb.cern.ch/GR_R_39X_V6B.db')
-process.GlobalTag.globaltag = 'GR_R_39X_V6B::All'
+process.GlobalTag.connect = cms.string('sqlite_file:/cvmfs/cms-opendata-conddb.cern.ch/GR_R_44_V15.db')
+process.GlobalTag.globaltag = 'GR_R_44_V15::All'
 process.load('FWCore.MessageService.MessageLogger_cfi')
 process.load("Configuration.StandardSequences.MagneticField_cff")
 process.HiForest.GlobalTagLabel = process.GlobalTag.globaltag
 
 #Define the output root file (change each run not to overwrite previous output)
 process.TFileService = cms.Service("TFileService",
-                                   fileName=cms.string("HiForestAOD_DATAtest.root"))
+                                   fileName=cms.string("HiForestAOD_DATAtest2011.root"))
 
 #Init Trigger Analyzer
 process.hltanalysis = cms.EDAnalyzer('TriggerInfoAnalyzer',
                               processName = cms.string("HLT"),
                               triggerName = cms.string("@"),         
-                              datasetName = cms.string("HIAllPhysics"),  #'HICorePhysics' to look at Core Physics only
+                              datasetName = cms.string("HIDiMuon"),  #'HICorePhysics' to look at Core Physics only
                               triggerResults = cms.InputTag("TriggerResults","","HLT"),
                               triggerEvent   = cms.InputTag("hltTriggerSummaryAOD","","HLT")                             
                               )

@@ -166,8 +166,8 @@ Analyzer::Analyzer(const edm::ParameterSet& iConfig)
   // input tags
   _inputTagMuons = edm::InputTag("globalMuons");
   //_inputTagElectrons = edm::InputTag("gsfElectrons"); //use this to Analyze electrons
-  //_inputTagPrimaryVertex = edm::InputTag("offlinePrimaryVertices*"); //vertex input tag used for pp collisions
-  _inputTagPrimaryVertex = edm::InputTag("hiSelectedVertex"); //'hiSelectedVertex' is generally used for PbPb collisions
+  _inputTagPrimaryVertex = edm::InputTag("offlinePrimaryVertices"); //vertex input tag used for pp collisions
+  //_inputTagPrimaryVertex = edm::InputTag("hiSelectedVertex"); //'hiSelectedVertex' is generally used for PbPb collisions
   
   // read configuration parameters
   _flagMC = 0;//iConfig.getParameter<int>("mc"); // true for MC, false for data

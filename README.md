@@ -3,10 +3,6 @@ Tool to produce HiForest root file from the 2010 Heavy Ion Open Data.
 
 This repository hosts a set of simple examples that use CMSSW EDAnalyzers to extract trigger information and produce HiForest root file from CMS public heavy-ion data. Currently, this repository has two main branches, [2010](https://github.com/cms-legacydata-analyses/HiForestProducerTool/tree/2010) and [2011](https://github.com/cms-legacydata-analyses/HiForestProducerTool/tree/2011) corresponding to the CMS heavy-ion data that has been so far released.  Please choose the one you need as instructions may vary a little, and follow the intructions therein.
 
-## Continuous Integration
-
-This repository contains also [a github workflow](.github/workflows/main.yml), which runs a test job on the CMS open data container using github free resources. It uses a docker container and runs a HiForest root file producer workflow defined in [commands.sh](commands.sh) and makes an example plot with [plot.sh](plot.sh). The ouput is returned as a github artifcat. The workflow is triggered by a pull request. 
-
 ## Usage instructions
 
 ### Prepare and compile
@@ -81,7 +77,9 @@ Run this analysis script with
 ```
 root -l forest2dimuon.C
 ```
+## Continuous Integration
 
+This repository contains also [a github workflow](.github/workflows/main.yml), which runs a test job on the CMS open data container using github free resources. It uses a docker container and runs a HiForest root file producer workflow defined in [commands.sh](commands.sh) and makes an example plot with [plot.sh](plot.sh). The ouput is returned as a github artifcat. The workflow is triggered by a pull request. 
 
 
 

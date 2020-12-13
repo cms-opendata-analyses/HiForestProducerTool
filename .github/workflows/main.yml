@@ -2,7 +2,7 @@ name: Test HI 2011 workflow on plain docker
 on:
   pull_request:
     branches:
-    - 2011
+    - main
 jobs:
   test_workflow:
     runs-on: ubuntu-latest

@@ -1,38 +1,3 @@
 # HiForestProducerTool
-The Tool to produce HiForest .root file from the 2010(11) Heavy Ion Open Data.
 
-
-Usage instructions:
-
-in 'CMSSW_3_9_2_patch5/src/' folder:
-
-1.
- mkdir HiForest
- 
- cd HiForest
- 
- mkedanlzr HiForestAnalyzer
- 
- checkout the repository
- 
-scram b
-
-
-
-2. To run on data:
-
- cmsRun hiforestanalyzer_cfg.py
-
-
-This files uses the InputList.txt file as an input which contains several root files from the 2010 Data Sample.
-
-The full list of files is CMS_HIRun2010_HIAllPhysics_ZS-v2_RECO_file_index.txt
-
-
-This will produce the HiForestAOD_DATAtest.root file as an output.
-
-
-3. forest2dimuon.C is analyzing this file, applying trigger filter, basic analysis selections and produces a histogram with the dimuon invariant mass.
-
-4. one can modify src/Analyzer.cc file in order to include other object (tracks, electrons, etc in the hiforest output) the instructions a given inside it.
-
+This repository hosts a set of simple examples that use CMSSW EDAnalyzers to extract trigger information and produce HiForest root file from CMS public heavy-ion data. Currently, this repository has two main branches, [2010](https://github.com/cms-legacydata-analyses/HiForestProducerTool/tree/2010) and [2011](https://github.com/cms-legacydata-analyses/HiForestProducerTool/tree/2011) corresponding to the CMS heavy-ion data that has been so far released.  Please choose the one you need as instructions may vary a little, and follow the intructions therein.

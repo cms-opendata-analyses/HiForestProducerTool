@@ -7,27 +7,19 @@ This repository hosts a set of simple examples that use CMSSW EDAnalyzers to ext
 
 ### Prepare and compile
 
-First, you have to create a [VM](http://opendata.cern.ch/docs/cms-virtual-machine-2010 "CMS 2010 Virtual Machines: How to install") from the CMS Open Data website or set up a [Docker container](http://opendata.cern.ch/docs/cms-guide-docker). 
-
-Then follow these steps:
-
-- Create a CMSSW environment (if using the Docker container, this step can be skipped as it is already available): 
-
-    ```
-    cmsrel CMSSW_3_9_2_patch2
-    ```
-
-- Change to the CMSSW_3_9_2_patch2/src/ directory:
-
-    ```
-    cd CMSSW_3_9_2_patch2/src/
-    ```
-
-- Initialize the CMSSW environment:
-
+First, you have to either
+- create a [VM](http://opendata.cern.ch/docs/cms-virtual-machine-2010 "CMS 2010 Virtual Machines: How to install") from the CMS Open Data website and create the CMSSW environment, change to it and intialize it with 
   ```
+  cmsrel CMSSW_3_9_2_patch2
+  cd CMSSW_3_9_2_patch2/src/
   cmsenv
   ```
+- or set up a [Docker container](http://opendata.cern.ch/docs/cms-guide-docker) with
+  ```
+  docker run --name opendata -it  gitlab-registry.cern.ch/cms-cloud/cmssw-docker/cmssw_3_9_2_patch5-slc5_amd64_gcc434:2020-11-17-e0b0b7a6 /bin/bash
+  ```
+
+Then follow these steps:
 
 - Obtain the code from git and move it to the `src` area:
 
@@ -45,10 +37,10 @@ Then follow these steps:
 
 - In the VM, make symbolic links to the conditions database
 
-```
-ln -sf /cvmfs/cms-opendata-conddb.cern.ch/GR_R_39X_V6B GR_R_39X_V6B
-ln -sf /cvmfs/cms-opendata-conddb.cern.ch/GR_R_39X_V6B.db GR_R_39X_V6B.db
-```
+  ```
+  ln -sf /cvmfs/cms-opendata-conddb.cern.ch/GR_R_39X_V6B GR_R_39X_V6B
+  ln -sf /cvmfs/cms-opendata-conddb.cern.ch/GR_R_39X_V6B.db GR_R_39X_V6B.db
+  ```
 
 You should now see the `cms-opendata-conddb.cern.ch` link in the `/cvmfs` area.
 
@@ -58,9 +50,9 @@ You should now see the `cms-opendata-conddb.cern.ch` link in the `/cvmfs` area.
 
 - Run the CMSSW executable in the background and dump the output in a log file with any name (full.log in this case)
 
-```
-cmsRun hiforestanalyzer_cfg.py > full.log 2>&1 &
-```
+  ```
+  cmsRun hiforestanalyzer_cfg.py > full.log 2>&1 &
+  ```
 
 This file reads the input root files from the full list of files CMS_HIRun2010_HIAllPhysics_ZS-v2_RECO_file_index.txt
 
@@ -71,7 +63,7 @@ One can modify [src/Analyzer.cc](src/Analyzer.cc) file in order to include other
 
 ### Run the analysis
 
-[forest2dimuon.C](forest2dimuon.C) is analyzing the output root file. It applies a trigger filter, does some basic analysis selections and produces a histogram with the dimuon invariant mass.
+[forest2dimuon.C](forest2dimuon.C) is a script to analyze the output root file. It applies a trigger filter, does some basic analysis selections and produces a histogram with the dimuon invariant mass.
 
 Run this analysis script with
 ```

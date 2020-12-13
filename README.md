@@ -70,12 +70,19 @@ This file reads the input root files from the full list of files CMS_HIRun2010_H
 
 This will produce the HiForestAOD_DATAtest.root file as an output.
 
-One can modify src/Analyzer.cc file in order to include other object (tracks, electrons, etc) in the hiforest output. the instructions a given inside it.
+One can modify [src/Analyzer.cc](src/Analyzer.cc) file in order to include other object (tracks, electrons, etc) in the hiforest output. the instructions a given inside it.
 
 
 ### Run the analysis
 
-forest2dimuon.C is analyzing the output root file. It applies a trigger filter, does some basic analysis selections and produces a histogram with the dimuon invariant mass.
+[forest2dimuon.C](forest2dimuon.C) is analyzing the output root file. It applies a trigger filter, does some basic analysis selections and produces a histogram with the dimuon invariant mass.
+
+Run this analysis script with
+```
+root -l forest2dimuon.C
+```
+
+
 
 
 

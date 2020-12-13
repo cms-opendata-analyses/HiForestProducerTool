@@ -57,11 +57,11 @@ Then follow these steps:
   cmsRun hiforestanalyzer_cfg.py > full.log 2>&1 &
   ```
 
-This file reads the input root files from the full list of files CMS_HIRun2010_HIAllPhysics_ZS-v2_RECO_file_index.txt
+The job is configured to read the input root files from the full list of files CMS_HIRun2010_HIAllPhysics_ZS-v2_RECO_file_index.txt
 
 This will produce the HiForestAOD_DATAtest.root file as an output.
 
-One can modify [src/Analyzer.cc](src/Analyzer.cc) file in order to include other object (tracks, electrons, etc) in the hiforest output. the instructions a given inside it.
+You can modify [src/Analyzer.cc](src/Analyzer.cc) file to include other object (tracks, electrons, etc) in the hiforest output. the instructions a given inside it.
 
 
 ### Run the analysis
@@ -72,6 +72,7 @@ Run this analysis script with
 ```
 root -l forest2dimuon.C
 ```
+
 ## Continuous Integration
 
 This repository contains also [a github workflow](.github/workflows/main.yml), which runs a test job on the CMS open data container using github free resources. It uses a docker container and runs a HiForest root file producer workflow defined in [commands.sh](commands.sh) and makes an example plot with [plot.sh](plot.sh). The ouput is returned as a github artifcat. The workflow is triggered by a pull request. 

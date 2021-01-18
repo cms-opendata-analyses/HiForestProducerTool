@@ -26,7 +26,7 @@ Then follow these steps:
 - Obtain the code from git and move it to the `src` area:
 
   ```
-  git clone -b 2010 git://github.com/cms-legacy-analyses/HiForestProducerTool.git HiForestProducer
+  git clone -b 2010 git://github.com/cms-opendata-analyses/HiForestProducerTool.git HiForestProducer
   cd HiForestProducer
   ```
 

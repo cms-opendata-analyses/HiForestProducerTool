@@ -23,10 +23,12 @@ First, you have to either
 
 Then follow these steps:
 
-- Obtain the code from git and move it to the `src` area:
+- Create a working directory and obtain the code from git:
 
   ```
-  git clone -b 2011 git://github.com/cms-legacy-analyses/HiForestProducerTool.git HiForestProducer
+  mkdir HiForest
+  cd HiForest
+  git clone -b 2011 git://github.com/cms-opendata-analyses/HiForestProducerTool.git HiForestProducer
   cd HiForestProducer
   ```
 

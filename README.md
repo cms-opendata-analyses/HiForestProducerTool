@@ -18,7 +18,7 @@ First, you have to either
 - or, set up a [Docker container](http://opendata.cern.ch/docs/cms-guide-docker) with
 
   ```
-  docker run --name opendata -it gitlab-registry.cern.ch/cms-cloud/cmssw-docker/cmssw_4_4_7-slc5_amd64_gcc434:2020-11-19-89e805d7 /bin/bash
+  docker run --name opendata -it gitlab-registry.cern.ch/cms-cloud/cmssw-docker/cmssw_4_4_7-slc5_amd64_gcc434:latest /bin/bash
   ```
 
 Then follow these steps:
